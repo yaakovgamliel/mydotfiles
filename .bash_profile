@@ -29,11 +29,11 @@ alias ls="ls -G"
 #export CLICOLOR=1
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-#PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin"
+PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin"
 
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-#export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/bin/:$PATH
-#export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/bin/:$PATH
+export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/:$PATH
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
