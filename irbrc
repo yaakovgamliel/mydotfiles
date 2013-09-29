@@ -4,7 +4,7 @@ if IRB.version.include?('DietRB')
   require 'irb/ext/colorize'
   IRB.formatter.color_scheme = :light_background
   IRB.formatter.prompt = :simple
-  puts 'this is MaRuby'
+  puts 'this is MacRuby'
 else
   require 'irb/completion'
   require 'pp'

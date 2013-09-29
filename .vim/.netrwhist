@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/yaakovgamliel/Documents/code/my_vcard/views'
-let g:netrw_dirhist_2='/Users/yaakovgamliel/Desktop/work/ns/nsipad/facebook-three20-527051a/src/common/Configurations'
-let g:netrw_dirhist_3='/private/tmp/app'
