@@ -26,6 +26,12 @@ alias rubyserver='ruby -run -e httpd . -p'
 #GIT
 
 alias gc='git clone'
+#RVM & Git
+
+function git-current-branch {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+	}
+	export PS1="[\$(~/.rvm/bin/rvm-prompt v p g)] \$(git-current-branch)$PS1"
 
 #SYS
 
@@ -42,6 +48,9 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/bin/:$PATH
 #export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/:$PATH
+
+
+export PATH=/usr/local/share/npm/bin:$PATH
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
