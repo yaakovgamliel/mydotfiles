@@ -11,7 +11,7 @@ alias py='python'
 
 alias mvim='open -a MacVim.app'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-
+alias sim="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 #RVM aliases
 
 alias  1.9='rvm use 1.9.3'
@@ -20,7 +20,7 @@ alias  gemset='rvm gemset use'
 alias  pods='gemset pods'
 
 #Ruby
-alias rd='gemset redcar && redcar'
+#alias rd='gemset redcar && redcar'
 alias rubyserver='ruby -run -e httpd . -p'
 
 #GIT
@@ -28,10 +28,6 @@ alias rubyserver='ruby -run -e httpd . -p'
 alias gc='git clone'
 #RVM & Git
 
-function git-current-branch {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-	}
-	export PS1="[\$(~/.rvm/bin/rvm-prompt v p g)] \$(git-current-branch)$PS1"
 
 #SYS
 
@@ -49,9 +45,28 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/bin/:$PATH
 #export PATH=/usr/local/share/npm/lib/node_modules/coffee-script/:$PATH
 
+#RVM & Git
 
-export PATH=/usr/local/share/npm/bin:$PATH
-
+# function git-current-branch {
+#     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+#         }
+#         export PS1="[\$(~/.rvm/bin/rvm-prompt v p g)] \$(git-current-branch)$PS1"
+# 		
+function parse_git_branch {
+        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+}
+ 
+function prompt {
+        local DEFAULT="\[\033[0m\]"
+        local RED="\[\033[0;31m\]"
+        local GREEN="\[\033[0;32m\]"
+        local BLUE="\[\033[0;34m\]"
+ 
+        PS1="\`if [ \$? == '0' ]; then echo '$DEFAULT'; else echo '$RED'; fi\`\h:\W \u$BLUE\$(parse_git_branch)$DEFAULT\$ "
+}
+ 
+prompt		
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 
