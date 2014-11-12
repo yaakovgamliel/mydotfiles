@@ -2,7 +2,9 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup 
 
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\:h16
+if has('gui_running')
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\:h16
+endif
 
 set nocompatible      " We're running Vim, not Vi!
 set encoding=utf-8

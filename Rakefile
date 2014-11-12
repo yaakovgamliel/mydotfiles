@@ -21,7 +21,7 @@ end
 task default: %w[setup]
 
 desc 'Runs the basic dotfile install for bash, vim and irb'
-task :setup => :move_new_files do
+task :setup => [:clone_repo, :move_new_files] do
   puts '[*] Setting you up!!'.cyan
 end
 
@@ -32,7 +32,7 @@ task :clone_repo do
 end
 
 desc 'Rename old files'
-task :rename_old_files => :clone_repo do
+task :rename_old_files do
   puts '[*] Backing up old config files ...'.green
   `cd && mv .bash_profile .bash_profile.old`
   `cd && mv .vimrc .vimrc.old`
@@ -47,8 +47,13 @@ task :move_new_files => :rename_old_files do
   `cd /tmp/mydotfiles && cp .irbrc ~/`
 end
 
-#desc 'Sets Vim files from the repo'
-#task ''
+desc 'Sets Vim files from the repo'
+task :setup_vim do
+  `cd /tmp/mydotfiles && mv vim .vim`
+  `cd && mv .vim .vim.before`
+  puts '[*] Your old Vim directory is now .vim.before'
+  `cd /tmp/mydotfiles && mv .vim ~/`
+end
 
 # This means that we need to complete task another_task before
 # we try to acomplish the simple_test task
