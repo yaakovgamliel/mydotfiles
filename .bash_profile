@@ -28,7 +28,8 @@ alias rubyserver='ruby -run -e httpd . -p'
 alias gc='git clone'
 #RVM & Git
 
-
+#Postgresql
+#PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #SYS
 
 export BUNDLER_EDITOR="vim"
@@ -38,6 +39,14 @@ alias ls="ls -G"
 alias wg="wget"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+
+#android
+
+ANDROID_HOME="/Applications/Android\ Studio.app/sdk/tools/"
+PATH=${PATH}:$ANDROID_HOME
+export PATH
+
 
 #PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin"
 
@@ -51,22 +60,20 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 #     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 #         }
 #         export PS1="[\$(~/.rvm/bin/rvm-prompt v p g)] \$(git-current-branch)$PS1"
-# 		
+#
 function parse_git_branch {
         git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
- 
+
 function prompt {
         local DEFAULT="\[\033[0m\]"
         local RED="\[\033[0;31m\]"
         local GREEN="\[\033[0;32m\]"
         local BLUE="\[\033[0;34m\]"
- 
+
         PS1="\`if [ \$? == '0' ]; then echo '$DEFAULT'; else echo '$RED'; fi\`\h:\W \u$BLUE\$(parse_git_branch)$DEFAULT\$ "
 }
- 
-prompt		
+
+prompt
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
