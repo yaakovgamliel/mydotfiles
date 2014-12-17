@@ -41,10 +41,12 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 
-#android
+# Android >: )
+# Android Studio file location
 
-ANDROID_HOME="/Applications/Android\ Studio.app/sdk/tools/"
-PATH=${PATH}:$ANDROID_HOME
+ANDROID_HOME="/Users/yaakov/Library/Android/sdk"
+ANDROID_TOOLS="/Users/yaakov/Library/Android/sdk/tools"
+PATH=${PATH}:$ANDROID_HOME:$ANDROID_TOOLS
 export PATH
 
 
