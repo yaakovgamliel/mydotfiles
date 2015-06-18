@@ -1,33 +1,5 @@
-#this are some aliases
-#
-alias code='cd ~/Documents/code'
-alias desk='cd ~/Desktop'
-alias tmp='cd /tmp'
-#in the CLI
-alias cl='clear'
-alias rb='ruby'
-alias py='python'
-#for Apps
-
-alias mvim='open -a MacVim.app'
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias sim="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
-#RVM aliases
-
-alias  1.9='rvm use 1.9.3'
-alias  2='rvm use 2.0.0'
-alias  gemset='rvm gemset use'
-alias  pods='gemset pods'
-
-#Ruby
-#alias rd='gemset redcar && redcar'
-alias rubyserver='ruby -run -e httpd . -p'
-
-#GIT
-
-alias gc='git clone'
-#RVM & Git
-
+# Use my aliases
+source ~/.aliases
 #Postgresql
 #PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #SYS

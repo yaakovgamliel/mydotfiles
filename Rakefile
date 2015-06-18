@@ -45,6 +45,7 @@ task :move_new_files => :rename_old_files do
   `cd /tmp/mydotfiles && cp .bash_profile ~/`
   `cd /tmp/mydotfiles && cp .vimrc ~/`
   `cd /tmp/mydotfiles && cp .irbrc ~/`
+  `cd /tmp/mydotfiles && cp .aliases ~/`
 end
 
 desc 'Sets Vim files from the repo'
