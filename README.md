@@ -9,4 +9,4 @@ Just clone the repo and run "rake" from your terminal, double check the Rakefile
 The Vim stuff
 --
 
-Worked for me and looks really nice with MacVim. 
+Worked for me and looks really nice with MacVim if don't have any fancy pluging configuation going on already. 
