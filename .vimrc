@@ -12,6 +12,7 @@ set guifont=Inconsolata\ for\ Powerline:h18
 let ruby_space_error = 1
 let c_space_errors = 1
 set colorcolumn=90
+set t_Co=256
 
 set showcmd        " show partial commands below the status line
 set shell=bash     " avoids munging PATH under zsh
