@@ -11,7 +11,18 @@ end
 desc 'Grabs the repository from github'
 task :clone_repo do
   puts "[*] Cloning dotfile repo ...".green
-  `cd /tmp && git clone https://github.com/yaakovgamliel/mydotfiles`
+  `cd  && git clone https://github.com/yaakovgamliel/mydotfiles`
+  `cd && mv mydotfiles .mydotfiles`
+end
+
+desc 'Grabs current dotfile'
+task :get_currents do
+  puts '[*] Grabbing your current dotfile ...'.green
+  `cd && cp .vimrc ~/.mydotfiles`
+  `cd && cp .bash_profile ~/.mydotfiles`
+  `cd && cp .irbrc ~/.mydotfiles`
+  `cd && cp .aliases ~/.mydotfiles`
+  puts '[*] Done grabbing dotfiles here'
 end
 
 desc 'Rename old files'
@@ -25,10 +36,10 @@ end
 desc 'Moves new mydotfile to user folder'
 task :move_new_files => :rename_old_files do
   puts '[*] Moving new dotfile to home directory ...'.cyan
-  `cd /tmp/mydotfiles && cp .bash_profile ~/`
-  `cd /tmp/mydotfiles && cp .vimrc ~/`
-  `cd /tmp/mydotfiles && cp .irbrc ~/`
-  `cd /tmp/mydotfiles && cp .aliases ~/`
+  `cd ~/.mydotfiles && cp .bash_profile ~/`
+  `cd ~/.mydotfiles && cp .vimrc ~/`
+  `cd ~/.mydotfiles && cp .irbrc ~/`
+  `cd ~/.mydotfiles && cp .aliases ~/`
 end
 
 desc 'Sets Vim files from the repo'
@@ -79,5 +90,3 @@ class String
     self.class.colorize(self, 32)
   end
 end
-
-
