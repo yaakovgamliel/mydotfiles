@@ -9,10 +9,13 @@ else
   require 'irb/completion'
   require 'pp'
   require 'irb/ext/save-history'
-  require 'wirble'
-
-  Wirble.init
-  Wirble.colorize
+  begin
+    require 'wirble'
+    Wirble.init
+    Wirble.colorize
+  rescue
+    p 'You need wirlble'
+  end
 
   IRB.conf[:SAVE_HISTORY] = 1000
   IRB.conf[:AUTO_INDENT] = true
