@@ -15,6 +15,8 @@
 #  └──────────────────────────────────────────────────────────────────────────────┘
 # This Rakefile clones my dotfiles repo from https://github.com/yaakovgamliel/mydotfiles
 # renames the current dotfile to *.old, and moves the new dotfile from the cloned repo
+require 'fileutils'
+
 
 VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/tpope/vim-rails.git',
@@ -24,6 +26,8 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'https://github.com/bling/vim-airline.git',
                'https://github.com/scrooloose/syntastic.git'
               ]
+
+CURRENT_DIR = FileUtils.pwd
 
 task default: %w[setup]
 
@@ -35,17 +39,17 @@ end
 desc 'Grabs the repository from github'
 task :clone_repo do
   puts "[*] Cloning dotfile repo ...".green
-  `cd  && git clone https://github.com/yaakovgamliel/mydotfiles`
-  `cd && mv mydotfiles .mydotfiles`
+  #`cd  && git clone https://github.com/yaakovgamliel/mydotfiles`
+  #`cd && mv mydotfiles .mydotfiles`
 end
 
 desc 'Grabs current dotfile'
 task :get_currents do
   puts '[*] Grabbing your current dotfile ...'.green
-  `cd && cp .vimrc ~/.mydotfiles`
-  `cd && cp .bash_profile ~/.mydotfiles`
-  `cd && cp .irbrc ~/.mydotfiles`
-  `cd && cp .aliases ~/.mydotfiles`
+  `cd && cp .vimrc #{CURRENT_DIR}`
+  `cd && cp .bash_profile #{CURRENT_DIR}`
+  `cd && cp .irbrc #{CURRENT_DIR}`
+  `cd && cp .aliases #{CURRENT_DIR}`
   puts '[*] Done grabbing dotfiles here'
 end
 
@@ -60,10 +64,10 @@ end
 desc 'Moves new mydotfile to user folder'
 task :move_new_files => :rename_old_files do
   puts '[*] Moving new dotfile to home directory ...'.cyan
-  `cd ~/.mydotfiles && cp .bash_profile ~/`
-  `cd ~/.mydotfiles && cp .vimrc ~/`
-  `cd ~/.mydotfiles && cp .irbrc ~/`
-  `cd ~/.mydotfiles && cp .aliases ~/`
+  `cd #{CURRENT_DIR} && cp .bash_profile ~/`
+  `cd #{CURRENT_DIR} && cp .vimrc ~/`
+  `cd #{CURRENT_DIR} && cp .irbrc ~/`
+  `cd #{CURRENT_DIR} && cp .aliases ~/`
 end
 
 desc 'Sets Vim files from the repo'
@@ -94,10 +98,6 @@ end
 
 task :another_task do
   puts 'Hello World!'.cyan
-end
-
-task :clean do
-  `rm -d mydotfiles`
 end
 
 # Just adds nice color to the terminal :)
