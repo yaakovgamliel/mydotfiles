@@ -16,6 +16,15 @@
 # This Rakefile clones my dotfiles repo from https://github.com/yaakovgamliel/mydotfiles
 # renames the current dotfile to *.old, and moves the new dotfile from the cloned repo
 
+REPOSITORIES = ['git://github.com/tpope/vim-rails.git',
+                'git://github.com/tpope/vim-rails.git',
+                'git://github.com/tpope/vim-bundler.git',
+                'https://github.com/vim-ruby/vim-ruby.git',
+                'https://github.com/scrooloose/nerdtree.git',
+                'https://github.com/bling/vim-airline.git',
+                'https://github.com/scrooloose/syntastic.git'
+               ]
+
 task default: %w[setup]
 
 desc 'Runs the basic dotfile install for bash, vim and irb'
@@ -64,13 +73,14 @@ task :setup_vim do
   `mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim`
   puts '[*] Now your Vim uses Pathogen'.cyan
   puts '[*] Installing Vim plugins...'.cyan
+
   `cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fugitive.git`
   `cd ~/.vim/bundle && vim -u NONE -c "helptags vim-fugitive/doc" -c q`
-  `cd ~/.vim/bundle && git clone git://github.com/tpope/vim-rails.git`
-  `cd ~/.vim/bundle && git clone git://github.com/tpope/vim-bundler.git`
-  `cd ~/.vim/bundle && git clone https://github.com/vim-ruby/vim-ruby.git`
-  `cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git`
-  `git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline`
+
+  REPOSITORIES.each do |repo|
+    `cd ~/.vim/bundle && git clone #{repo}`
+  end
+
   puts '[*] Finished installing Vim plugins'.cyan
 end
 
