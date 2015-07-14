@@ -10,6 +10,12 @@ else
   require 'pp'
   require 'irb/ext/save-history'
   begin
+    require 'interactive_editor'
+  rescue
+    puts "Interactive editor is disable in this session"
+  end
+
+  begin
     require 'wirble'
     Wirble.init
     Wirble.colorize
