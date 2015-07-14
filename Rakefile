@@ -23,7 +23,7 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'https://github.com/scrooloose/nerdtree.git',
                'https://github.com/bling/vim-airline.git',
                'https://github.com/scrooloose/syntastic.git'
-             ]
+              ]
 
 task default: %w[setup]
 
