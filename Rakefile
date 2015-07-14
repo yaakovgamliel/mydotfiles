@@ -1,4 +1,3 @@
-
 #  ┌──────────────────────────────────────────────────────────────────────────────┐
 #  │                                                                              │
 #  │                                                                              │
@@ -15,8 +14,8 @@
 #  └──────────────────────────────────────────────────────────────────────────────┘
 # This Rakefile clones my dotfiles repo from https://github.com/yaakovgamliel/mydotfiles
 # renames the current dotfile to *.old, and moves the new dotfile from the cloned repo
-require 'fileutils'
 
+require 'fileutils'
 
 VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/tpope/vim-rails.git',
@@ -26,6 +25,8 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'https://github.com/bling/vim-airline.git',
                'https://github.com/scrooloose/syntastic.git'
               ]
+
+DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases']
 
 CURRENT_DIR = FileUtils.pwd
 
@@ -46,10 +47,11 @@ end
 desc 'Grabs current dotfile'
 task :get_currents do
   puts '[*] Grabbing your current dotfile ...'.green
-  `cd && cp .vimrc #{CURRENT_DIR}`
-  `cd && cp .bash_profile #{CURRENT_DIR}`
-  `cd && cp .irbrc #{CURRENT_DIR}`
-  `cd && cp .aliases #{CURRENT_DIR}`
+
+  DOTFILES.each do |dot|
+    `cd && cp #{dot} #{CURRENT_DIR}`
+  end
+
   puts '[*] Done grabbing dotfiles here'
 end
 
@@ -64,10 +66,9 @@ end
 desc 'Moves new mydotfile to user folder'
 task :move_new_files => :rename_old_files do
   puts '[*] Moving new dotfile to home directory ...'.cyan
-  `cd #{CURRENT_DIR} && cp .bash_profile ~/`
-  `cd #{CURRENT_DIR} && cp .vimrc ~/`
-  `cd #{CURRENT_DIR} && cp .irbrc ~/`
-  `cd #{CURRENT_DIR} && cp .aliases ~/`
+  DOTFILES.each do |dot|
+    `cd #{CURRENT_DIR} && cp #{dot} ~/`
+  end
 end
 
 desc 'Sets Vim files from the repo'
