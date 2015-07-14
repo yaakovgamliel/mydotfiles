@@ -9,10 +9,16 @@ else
   require 'irb/completion'
   require 'pp'
   require 'irb/ext/save-history'
+
+  RB.conf[:SAVE_HISTORY] = 1000                                                          
+  IRB.conf[:AUTO_INDENT] = true                                                           
+  IRB.conf[:USE_READLINE] = true                                                          
+  IRB.conf[:PROMPT_MODE]  = :SIMPLE  
+
   begin
     require 'interactive_editor'
   rescue
-    puts "Interactive editor is disable in this session"
+    p "Interactive editor is disable in this session"
   end
 
   begin
@@ -23,9 +29,5 @@ else
     p 'You need wirlble'
   end
 
-  IRB.conf[:SAVE_HISTORY] = 1000
-  IRB.conf[:AUTO_INDENT] = true
-  IRB.conf[:USE_READLINE] = true
-  IRB.conf[:PROMPT_MODE]  = :SIMPLE
 end
 
