@@ -3,19 +3,21 @@ execute pathogen#infect()
 filetype off
 filetype plugin indent on
 syntax on
+
 setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal noexpandtab
-" THIS IS MY ADDED STUFF
-" 
-set number
-color hybrid
+setlocal softtabstop=2 
 set tabstop=2      " a tab is two spaces
 set expandtab     " use spaces, not tabs
-set guifont=Inconsolata\ for\ Powerline:h18
+set number
+
+color hybrid
+
+set guifont=Inconsolata\ for\ Powerline:h18 "This one comes separate
+
 let ruby_space_error = 1
 let c_space_errors = 1
 set colorcolumn=90
+
 set t_Co=256 "gives nice colors to the terminal
 
 set showcmd        " show partial commands below the status line
