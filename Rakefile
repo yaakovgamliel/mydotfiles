@@ -16,14 +16,14 @@
 # This Rakefile clones my dotfiles repo from https://github.com/yaakovgamliel/mydotfiles
 # renames the current dotfile to *.old, and moves the new dotfile from the cloned repo
 
-REPOSITORIES = ['git://github.com/tpope/vim-rails.git',
-                'git://github.com/tpope/vim-rails.git',
-                'git://github.com/tpope/vim-bundler.git',
-                'https://github.com/vim-ruby/vim-ruby.git',
-                'https://github.com/scrooloose/nerdtree.git',
-                'https://github.com/bling/vim-airline.git',
-                'https://github.com/scrooloose/syntastic.git'
-               ]
+VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
+               'git://github.com/tpope/vim-rails.git',
+               'git://github.com/tpope/vim-bundler.git',
+               'https://github.com/vim-ruby/vim-ruby.git',
+               'https://github.com/scrooloose/nerdtree.git',
+               'https://github.com/bling/vim-airline.git',
+               'https://github.com/scrooloose/syntastic.git'
+             ]
 
 task default: %w[setup]
 
@@ -77,7 +77,7 @@ task :setup_vim do
   `cd ~/.vim/bundle && git clone git://github.com/tpope/vim-fugitive.git`
   `cd ~/.vim/bundle && vim -u NONE -c "helptags vim-fugitive/doc" -c q`
 
-  REPOSITORIES.each do |repo|
+  VIM_PLUGINS.each do |repo|
     `cd ~/.vim/bundle && git clone #{repo}`
   end
 
