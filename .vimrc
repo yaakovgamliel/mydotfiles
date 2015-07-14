@@ -1,7 +1,11 @@
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
+filetype off
+filetype plugin indent on
+syntax on
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal noexpandtab
 " THIS IS MY ADDED STUFF
 " 
 set number
