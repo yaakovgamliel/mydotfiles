@@ -20,12 +20,13 @@ require 'fileutils'
 VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/tpope/vim-rails.git',
                'git://github.com/tpope/vim-bundler.git',
-               'https://github.com/vim-ruby/vim-ruby.git',
-               'https://github.com/scrooloose/nerdtree.git',
-               'https://github.com/bling/vim-airline.git',
-               'https://github.com/scrooloose/syntastic.git',
+               'git://github.com/tpope/vim-endwise.git',
+               'git://github.com/tpope/vim-abolish.git',
+               'git://github.com/vim-ruby/vim-ruby.git',
+               'git://github.com/scrooloose/nerdtree.git',
+               'git://github.com/bling/vim-airline.git',
+               'git://github.com/scrooloose/syntastic.git',
                'git://github.com/jiangmiao/auto-pairs.git',
-               'git://github.com/tpope/vim-abolish.git'
               ]
 
 DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases']
