@@ -29,7 +29,7 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/jiangmiao/auto-pairs.git',
               ]
 
-DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases']
+DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases','tmux.conf']
 
 CURRENT_DIR = FileUtils.pwd
 
@@ -64,6 +64,7 @@ task :rename_old_files do
   `cd && mv .bash_profile .bash_profile.old`
   `cd && mv .vimrc .vimrc.old`
   `cd && mv .irbrc .irbrc.old`
+  `cd && mv .tmux.conf .tmux.conf.old`
 end
 
 desc 'Moves new mydotfile to user folder'
