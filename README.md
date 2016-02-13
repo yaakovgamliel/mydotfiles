@@ -32,4 +32,8 @@ Worked for me and looks really nice with MacVim if don't have any fancy pluging 
 Note
 ---
 The rake file relaes on Mac OS X file system paths, so check the paths befero running on Linux, 
-also for Linux rename .bash_profile to .bashrc. 
+also for Linux rename .bash_profile to .bashrc.
+
+ToDo
+----
+I've been runnig this in Linux boxes as well so it would be nice to add some little check to properly name files according to the host system.
