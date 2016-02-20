@@ -95,6 +95,11 @@ task :setup_vim do
   puts '[*] Finished installing Vim plugins'.cyan
 end
 
+desc 'Copies vim colors to proper folder'
+task :vim_colors do
+  `cp -r colors ~/.vim/`
+  puts 'Vim theme colors copied to ~/.vim'.cyan
+end
 
 # This means that we need to complete task another_task before
 # we try to acomplish the simple_test task
