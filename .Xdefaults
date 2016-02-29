@@ -1,5 +1,5 @@
 ! urxvt
-
+! Based on http://tutos.readthedocs.org/en/latest/source/Arch.html
 URxvt*geometry:                115x40
 !URxvt*font: xft:Liberation Mono:pixelsize=12:antialias=false:hinting=true
 URxvt*font: xft:Inconsolata:pixelsize=14:antialias=true:hinting=true
