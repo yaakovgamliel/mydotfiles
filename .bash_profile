@@ -6,7 +6,12 @@ source ~/.aliases
 
 export BUNDLER_EDITOR="vim"
 alias ls='ls -G'
-export TERM="xterm-color"
+#export TERM="xterm-color"                                                                                    
+# This fixes some annoying issue with tmux backgrounf colors                                                  
+if [[ $TERM == xterm  ]]; then                                                                                
+  export TERM="xterm-256color"                                                                                
+fi  
+
 alias ls="ls -G"
 alias wg="wget"
 export CLICOLOR=1
