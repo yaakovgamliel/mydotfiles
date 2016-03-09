@@ -10,8 +10,6 @@ set tabstop=2      " a tab is two spaces
 set expandtab     " use spaces, not tabs
 set number
 
-color hybrid
-
 set guifont=Inconsolata\ for\ Powerline:h18 "This one comes separate
 
 let ruby_space_error = 1
@@ -40,3 +38,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"Theme
+color hybrid

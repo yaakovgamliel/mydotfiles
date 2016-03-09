@@ -18,7 +18,6 @@
 require 'fileutils'
 
 VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
-               'git://github.com/tpope/vim-rails.git',
                'git://github.com/tpope/vim-bundler.git',
                'git://github.com/tpope/vim-endwise.git',
                'git://github.com/tpope/vim-abolish.git',
@@ -28,7 +27,8 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/bling/vim-airline.git',
                'git://github.com/scrooloose/syntastic.git',
                'git://github.com/jiangmiao/auto-pairs.git',
-               'git://git.wincent.com/command-t.git'
+               'git://git.wincent.com/command-t.git',
+               'git://github.com/vim-ruby/vim-ruby.git'
               ]
 
 DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases','tmux.conf']
@@ -95,6 +95,11 @@ task :setup_vim do
   puts '[*] Finished installing Vim plugins'.cyan
 end
 
+desc 'Copies vim colors to proper folder'
+task :vim_colors do
+  `cp -r colors ~/.vim/`
+  puts 'Vim theme colors copied to ~/.vim'.cyan
+end
 
 # This means that we need to complete task another_task before
 # we try to acomplish the simple_test task
