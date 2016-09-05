@@ -4,8 +4,10 @@ filetype off
 filetype plugin indent on
 syntax on
 
+let mapleader = ',' " Map ',' as <leader> key
+
 setlocal shiftwidth=2
-setlocal softtabstop=2 
+setlocal softtabstop=2
 set tabstop=2      " a tab is two spaces
 set expandtab     " use spaces, not tabs
 set number
