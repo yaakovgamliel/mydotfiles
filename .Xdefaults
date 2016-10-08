@@ -4,11 +4,8 @@
 
 URxvt*geometry: 100x40
 !URxvt*font: xft:Ubuntu Mono derivative Powerline:regular:pixelsize=15:antialias=true:hinting=true
-!URxvt*font: xft:Inconsolata:pixelsize=14:antialias=true:hinting=true
 URxvt*font: xft:Inconsolata\ for\ Powerline:medium:pixelsize=17:antialias=true:hinting=true
-!URxvt*boldFont: xft:Monospace:regular:pixelsize=12:antialias=true:hinting=true
 URxvt*boldFont: xft:Inconsolata\ fo\r Powerline:bold:pixelsize=17:antialias=true:hinting=true
-!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=12:antialias=false:hinting=true
 URxvt*depth: 24
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -22,16 +19,18 @@ URxvt*.shading: 10
 !! perl extensions
 URxvt.perl-ext: default,url-select,clipboard,keyboard-select
 
-! url-select (part of urxvt-perls package)
-! -> To enable extensions place the following in ~/.Xresources
-!   (change to whatever suits your needs)
-! URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
-! URxvt.url-select.launcher:  chromium
-! URxvt.url-select.underline: true
-! URxvt.keysym.M-u:           perl:url-select:select_next
-! URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-! URxvt.keysym.M-s:           perl:keyboard-select:search
-
+!! Got all this after instralling "yaourt -S urxvt-perls"
+!! 
+!! url-select (part of urxvt-perls package)
+!! -> To enable extensions place the following in ~/.Xresources
+!!   (change to whatever suits your needs)
+!! URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+!! URxvt.url-select.launcher:  chromium
+!! URxvt.url-select.underline: true
+!! URxvt.keysym.M-u:           perl:url-select:select_next
+!! URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+!! URxvt.keysym.M-s:           perl:keyboard-select:search
+!!
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.url-select.autocopy:  true
 URxvt.url-select.button:    2
@@ -43,10 +42,6 @@ URxvt.keysym.M-v:perl:clipboard:paste
 
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
-
-! Nastavuje kopirovani
-!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-!URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 
 ! disable the stupid ctrl+shift 'feature'
 URxvt.iso14755: false
