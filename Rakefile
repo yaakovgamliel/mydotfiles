@@ -35,6 +35,8 @@ DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases','tmux.conf']
 
 CURRENT_DIR = FileUtils.pwd
 
+SYS= ENV["_system_type"]
+
 task default: %w[setup]
 
 desc 'Runs the basic dotfile install for bash, vim and irb'
@@ -63,7 +65,11 @@ end
 desc 'Rename old files'
 task :rename_old_files do
   puts '[*] Backing up old config files ...'.green
-  `cd && mv .bash_profile .bash_profile.old`
+  if SYS.eql? "Linux"
+    `cd && mv .bashrc .bashrc.old`
+  elsif SYS.eql? "Darwin"
+     `cd && mv .bash_profile .bash_profile.old`
+  end
   `cd && mv .vimrc .vimrc.old`
   `cd && mv .irbrc .irbrc.old`
   `cd && mv .tmux.conf .tmux.conf.old`
