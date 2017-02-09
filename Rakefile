@@ -28,7 +28,8 @@ VIM_PLUGINS = ['git://github.com/tpope/vim-rails.git',
                'git://github.com/scrooloose/syntastic.git',
                'git://github.com/jiangmiao/auto-pairs.git',
                'git://git.wincent.com/command-t.git',
-               'git://github.com/vim-ruby/vim-ruby.git'
+               'git://github.com/vim-ruby/vim-ruby.git',
+               'git://github.com/airblade/vim-gitgutter.git'
               ]
 
 DOTFILES = ['.vimrc', '.irbrc','.bash_profile','.aliases','tmux.conf']
