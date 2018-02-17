@@ -48,8 +48,7 @@ end
 desc 'Grabs the repository from github'
 task :clone_repo do
   puts "[*] Cloning dotfile repo ...".green
-  #`cd  && git clone https://github.com/yaakovgamliel/mydotfiles`
-  #`cd && mv mydotfiles .mydotfiles`
+  `cd /tmp && git clone https://github.com/yaakovgamliel/mydotfiles`
 end
 
 desc 'Grabs current dotfile'

@@ -18,21 +18,29 @@
 My DotFiles 
 ==
 I'm traying to get what I actually really need, I hope may be helpful to you to.
+ * bash
+ * vim
+ * tmux
+ * irb
 
 Use
 ==
-Just clone the repo and run "rake" from your terminal, double check the Rakefile before 
+Just clone the repo and run ```rake -T``` to check the options, double check the Rakefile before 
 doing anything to your system :)
+
+Dependencies
+------
+You will need rake of course and curl in order to install pathogen, if you want nice looking fonts 
+for your vim's powerline status bar check out [powerline fonts](https://github.com/powerline/fonts).
 
 The Vim stuff
 --
-
 Worked for me and looks really nice with MacVim if don't have any fancy pluging configuation going on already.
 
 Note
 ---
-The rake file its based on macOS file system paths, so check the paths before running on Linux, 
-also for Linux rename .bash_profile to .bashrc.
+Bash profiles setup needs some work, most of the bash profiles were made for macOS so i wouldn't just replace your .bashrc
+with this one here
 
 ToDo
 ----
