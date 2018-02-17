@@ -31,7 +31,7 @@ Worked for me and looks really nice with MacVim if don't have any fancy pluging 
 
 Note
 ---
-The rake file relaes on Mac OS X file system paths, so check the paths before running on Linux, 
+The rake file its based on macOS file system paths, so check the paths before running on Linux, 
 also for Linux rename .bash_profile to .bashrc.
 
 ToDo
