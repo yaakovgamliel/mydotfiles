@@ -1,0 +1,31 @@
+[user]
+  ;Personal info here
+	name = "My name"
+	email = my@email.com
+  signingkey = SOME2KEY9IN7HERE
+[color]
+  ui = auto
+[alias]
+  b  = branch
+  st = status
+  di = diff
+  ck = checkout
+  cleanup = reset --hard HEAD
+  l  = "!source ~/.githelpers && pretty_git_log"
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[mergetool]
+	keepBackup = true
+[core]
+  editor = /usr/bin/vim
+
+; [filter "lfs"]
+; 	required = true
+; 	clean = git-lfs clean -- %f
+; 	smudge = git-lfs smudge -- %f
+; 	process = git-lfs filter-process
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
