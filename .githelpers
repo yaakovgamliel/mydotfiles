@@ -1,0 +1,8 @@
+#!/bin/bash
+
+HASH="%h"
+
+FORMAT="$HASH"
+function pretty_git_log() {
+  git log --pretty="tformat:$FORMAT" 
+}
