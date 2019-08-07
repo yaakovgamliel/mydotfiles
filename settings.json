@@ -1,0 +1,19 @@
+{
+    "workbench.colorCustomizations": {
+        // "statusBar.noFolderBackground": "#1d2225",
+        "statusBar.background": "#1d2225", 
+        "statusBar.foreground": "#c5c5c5",
+    },
+    "workbench.colorTheme": "Oceanic Next (dimmed bg)",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": -2,
+    "window.titleBarStyle": "native",
+    "workbench.iconTheme": "vs-minimal",
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+}
