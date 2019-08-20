@@ -1,0 +1,19 @@
+set realname = "yaakov"
+set from = "yaakov@mail.com"
+set use_from = yes
+set envelope_from = yes
+
+#set smtp_url = "smtps://yaakov@mail.com:<password>@smtp.mail.com:465/"
+set smtp_url = "smtps://yaakov@mail.com@smtp.mail.com:465/"
+#set smtp_pass = "<password>""
+set imap_user = "yaakov@mail.com"
+#set imap_pass = "<password>"
+set folder = "imaps://imap.mail.com:993"
+set spoolfile = "+INBOX"
+set ssl_force_tls = yes
+
+# G to get mail
+bind index G imap-fetch-mail
+set editor = "vim"
+set charset = "utf-8"
+set record = ''
