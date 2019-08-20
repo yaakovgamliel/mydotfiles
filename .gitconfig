@@ -29,3 +29,10 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[sendemail]
+	smtpserver = smtp.mail.com
+	smtpuser = yaakov@mail.com
+	smtpencryption = tls
+	smtpserverport = 587
+	suppresscc = self
+  ;smtpPass = password
