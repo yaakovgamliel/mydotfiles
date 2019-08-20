@@ -1,7 +1,7 @@
 [user]
   ;Personal info here
-	name = "My name"
-	email = my@email.com
+  name = "My name"
+  email = my@email.com
   signingkey = SOME2KEY9IN7HERE
 [color]
   ui = auto
@@ -15,24 +15,18 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [mergetool]
-	keepBackup = true
+  keepBackup = true
 [core]
   editor = /usr/bin/vim
-
-; [filter "lfs"]
-; 	required = true
-; 	clean = git-lfs clean -- %f
-; 	smudge = git-lfs smudge -- %f
-; 	process = git-lfs filter-process
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [sendemail]
-	smtpserver = smtp.mail.com
-	smtpuser = yaakov@mail.com
-	smtpencryption = tls
-	smtpserverport = 587
-	suppresscc = self
+  smtpserver = smtp.mail.com
+  smtpuser = yaakov@mail.com
+  smtpencryption = tls
+  smtpserverport = 587
+  suppresscc = self
   ;smtpPass = password
