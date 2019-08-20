@@ -10,11 +10,13 @@ alias tmp='cd /tmp'
 alias cl='clear'
 alias rb='ruby'
 alias py='python'
-#for Apps
 
 # Apps
 
 alias mvim='open -a MacVim.app'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias rubyserver='ruby -run -e httpd . -p'
 
+alias nmutt='neomutt'
+
+# Git
+alias send-patch='git send-email --from="<sender@mail.com>" --to="<receipient@mail.com>"'
