@@ -1,0 +1,44 @@
+general {
+	colors = true
+	interval = 5
+}
+
+order += "disk /home/yasha"
+order += "wireless wlp0s20u9"
+/* order += "ethernet enp5s0" */
+order += "volume master"
+order += "load"
+order += "tztime local"
+
+wireless wlp0s20u9 {
+	format_up = " %ip (%quality at %essid)" # wifi
+	color_good = "#ffffff"
+	format_down = ""
+}
+
+/* ethernet enp5s0 { */
+	/* # if you use %speed, i3status requires the cap_net_admin capability */
+	/* format_up = " %ip (%speed)" # sitemap */
+	/* color_good = "#ffffff" */
+	/* format_down = "" */
+/* } */
+
+tztime local {
+	format = " %Y-%m-%d %H:%M" # clock
+}
+
+load {
+	format = " %5min"
+}
+
+disk "/home/yasha" {
+	format = " %free"
+}
+
+volume master {
+	format = " %volume"
+	format_muted = " %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
